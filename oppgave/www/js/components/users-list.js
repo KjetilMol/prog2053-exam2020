@@ -26,6 +26,7 @@ class UsersList extends LitElement {
     fetch('api/fetchUsers.php')
     .then(response => response.json())
     .then(data => this.users = data);
+    
   }
 
   setSelectedUser(e, user) {
@@ -46,7 +47,7 @@ class UsersList extends LitElement {
     return html`
       <div class="row">
         <div class="column">
-          <h2>Brukere</h2>
+          <h2>Brukere TEST</h2>
           <ul>
             ${this.users.map(user => html`<li @click="${(e) => this.setSelectedUser(e, user)}">${user.uname}</li>`)}
           </ul>
@@ -57,7 +58,7 @@ class UsersList extends LitElement {
         </div>
       </div>
     `;
-  }
+  } 
 }
 // Register the new element with the browser.
 customElements.define('users-list', UsersList);

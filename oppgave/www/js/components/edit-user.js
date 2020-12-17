@@ -7,7 +7,26 @@ class EditUser extends LitElement {
     };
   }
 
-  // din kode her
+  render() {
+    return html`
+
+      <div>
+        <li>${this.user.uname}</li>
+        <li>${this.user.firstName}</li>
+        <li>${this.user.lastName}</li>
+      </div>
+    
+      <form action="/api/updateUser.php">
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname" value="${this.user.firstName}"><br>
+
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname" value="${this.user.lastName}"><br><br>
+
+        <input type="submit" value="Submit/edit User">
+      </form> 
+    `;
+  }
 
 }
 customElements.define('edit-user', EditUser);
